@@ -150,9 +150,9 @@ function desenhar(){
 
     ctx.fillStyle = '#ffffff';
     ctx.font = '16px system-ui, Arial';
-    ctx.fillText('Pontos:' + Math.floor(pontos), pista.x + 10, 24);
-    ctx.fillText('Recorde:' + recorde, pista.x + pista.w - 120, 24);
-    ctx.fillText('Nível:' + nivel, pista.x + 10, 44);
+    ctx.fillText('Pontos: ' + Math.floor(pontos), pista.x + 10, 24);
+    ctx.fillText('Recorde: ' + recorde, pista.x + pista.w - 120, 24);
+    ctx.fillText('Nível: ' + nivel, pista.x + 10, 44);
 
     if (estado === 'menu') {
         ctx.fillStyle = 'rgba(0,0,0,0.6)';
@@ -176,7 +176,7 @@ function desenhar(){
         ctx.font = '22px system-ui, Arial';
         ctx.fillText('Colisão. Jogo encerrado.', canvas.width / 2, canvas.height / 2 - 20);
         ctx.font = '16px system-ui, Arial';
-        ctx.fillText('Pontos: '+ Math.floor (pontos) + 'Recorde:'+ recorde, canvas.width / 2, canvas.height / 2 + 10);
+        ctx.fillText('Pontos: ' + Math.floor(pontos) + '  |  Recorde: ' + recorde, canvas.width / 2, canvas.height / 2 + 10);
         ctx.fillText('Pressione Enter para reiniciar', canvas.width / 2, canvas.height / 2 + 36);
         ctx.textAlign = 'left';
     }
@@ -192,7 +192,7 @@ function loop(tempoAgora) {
 requestAnimationFrame(loop);
 
 window.addEventListener('keydown', (e) => {
-    if (['ArrowLeft','ArrowRight', 'Space'].includes(e.key)) e.preventDefault();
+    if (['ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault();
     if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') teclas.esquerda = true; 
     if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') teclas.direita = true;
     if (e.key === 'Enter' && estado !== 'jogando') iniciar();
